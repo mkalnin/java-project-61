@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -13,12 +12,12 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("0 - Exit \n");
         String game = scanner.next();
-        //Cli cli = new Cli();
+        Cli cli = new Cli();
         if (game.equals("1")) {
-            Cli.greeting();
+            cli.greeting(scanner);
         } else if (game.equals("2")) {
-            Cli.greeting();
-            CheckEvenGame.game();
+            cli.greeting(scanner);
+            CheckEvenGame.game(cli, scanner);
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {
