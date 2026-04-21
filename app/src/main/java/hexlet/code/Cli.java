@@ -4,12 +4,21 @@ import java.util.Scanner;
 
 public class Cli {
     private String userName;
+    private Scanner scanner;
 
     public void greeting(Scanner scanner) {
+        this.scanner = scanner;
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name? ");
         this.setUserName(scanner.next());
         System.out.println("Hello, " + this.getUserName() + "!");
+    }
+
+    public void processUserAnswer(String question, String correctAnswer) {
+        System.out.println("Question: " + question);
+        System.out.println("Your answer: ");
+        String answer = scanner.next();
+        this.checkAnswer(answer, correctAnswer);
     }
 
     public void checkAnswer(String answer, String correctAnswer) {

@@ -15,11 +15,9 @@ public class GCD implements Gameable{
         int number1 = (int) (Math.random() * 100) + 1;
         int number2 = (int) (Math.random() * 100) + 1;
         int gcd = this.getGCD(number1, number2);
+        String question = String.valueOf(number1) + ' ' + number2;
         String correctAnswer = String.valueOf(this.getGCD(number1, number2));
-        System.out.println("Question: " + number1 + ' ' + number2);
-        System.out.println("Your answer: ");
-        String answer = scanner.next();
-        cli.checkAnswer(answer, correctAnswer);
+        cli.processUserAnswer(question, correctAnswer);
     }
 
     private int getGCD(int a, int b) {

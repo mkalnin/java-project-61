@@ -13,15 +13,10 @@ public class CheckEvenGame implements Gameable {
     @Override
     public void play(Scanner scanner, Cli cli) throws RuntimeException {
         int number = (int) (Math.random() * 100) + 1;
-
         String correctAnswer = "no";
         if (number % 2 == 0) {
             correctAnswer = "yes";
         }
-
-        System.out.println("Question: " + number);
-        System.out.println("Your answer: ");
-        String answer = scanner.next();
-        cli.checkAnswer(answer, correctAnswer);
+        cli.processUserAnswer(String.valueOf(number), correctAnswer);
     }
 }

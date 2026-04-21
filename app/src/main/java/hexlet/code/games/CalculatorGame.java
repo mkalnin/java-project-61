@@ -20,10 +20,7 @@ public class CalculatorGame implements Gameable {
         String equation =  String.valueOf(number1) + ' ' + signs[indexOfSign] + ' ' + String.valueOf(number2);
         System.out.println(equation);
         String  correctAnswer = String.valueOf(this.correctAnswer(number1, number2, signs[indexOfSign]));
-        System.out.println("Question: " + equation);
-        System.out.println("Your answer: ");
-        String answer = scanner.next();
-        cli.checkAnswer(answer, correctAnswer);
+        cli.processUserAnswer(equation, correctAnswer);
     }
 
     private int correctAnswer(int number1, int number2, String sign) {
