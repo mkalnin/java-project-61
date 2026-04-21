@@ -22,16 +22,12 @@ public class App {
         if (game.equals("1")) {
             cli.greeting(scanner);
         } else if (game.equals("2")) {
-            cli.greeting(scanner);
             BasicGame.game(cli, scanner, new CheckEvenGame());
         } else if (game.equals("3")) {
-            cli.greeting(scanner);
             BasicGame.game(cli, scanner, new CalculatorGame());
         } else if (game.equals("4")) {
-            cli.greeting(scanner);
             BasicGame.game(cli, scanner, new GCD());
         } else if (game.equals("5")) {
-            cli.greeting(scanner);
             BasicGame.game(cli, scanner, new Progression());
         } else if (game.equals("6")) {
             cli.greeting(scanner);

@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class BasicGame {
     public static void game(Cli cli, Scanner scanner, Gameable game) {
+        cli.greeting(scanner);
         System.out.println(game.getGameTitle());
         for (int i = 0; i < 3; i++) {
             try {
