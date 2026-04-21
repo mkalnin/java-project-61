@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.BasicGame;
-import hexlet.code.games.CalculatorGame;
-import hexlet.code.games.CheckEvenGame;
-import hexlet.code.games.GCD;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -17,6 +14,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit \n");
         String game = scanner.next();
         Cli cli = new Cli();
@@ -31,6 +29,9 @@ public class App {
         } else if (game.equals("4")) {
             cli.greeting(scanner);
             BasicGame.game(cli, scanner, new GCD());
+        } else if (game.equals("5")) {
+            cli.greeting(scanner);
+            BasicGame.game(cli, scanner, new Progression());
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {
