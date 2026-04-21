@@ -15,6 +15,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit \n");
         String game = scanner.next();
         Cli cli = new Cli();
@@ -32,6 +33,9 @@ public class App {
         } else if (game.equals("5")) {
             cli.greeting(scanner);
             BasicGame.game(cli, scanner, new Progression());
+        } else if (game.equals("6")) {
+            cli.greeting(scanner);
+            Prime.game(cli, scanner);
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {
