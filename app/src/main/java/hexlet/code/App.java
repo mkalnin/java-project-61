@@ -1,5 +1,9 @@
 package hexlet.code;
 
+import hexlet.code.games.BasicGame;
+import hexlet.code.games.CalculatorGame;
+import hexlet.code.games.CheckEvenGame;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -10,6 +14,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit \n");
         String game = scanner.next();
         Cli cli = new Cli();
@@ -17,7 +22,10 @@ public class App {
             cli.greeting(scanner);
         } else if (game.equals("2")) {
             cli.greeting(scanner);
-            CheckEvenGame.game(cli, scanner);
+            BasicGame.game(cli, scanner, new CheckEvenGame());
+        } else if (game.equals("3")) {
+            cli.greeting(scanner);
+            BasicGame.game(cli, scanner, new CalculatorGame());
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {
