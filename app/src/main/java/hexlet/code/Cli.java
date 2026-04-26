@@ -37,7 +37,7 @@ public class Cli {
     }
 
     public void successMessage() {
-        System.out.println("Congratulations,  " + this.getUserName());
+        System.out.println("Congratulations,  " + this.getUserName() + "!");
     }
 
     public String getUserName() {
