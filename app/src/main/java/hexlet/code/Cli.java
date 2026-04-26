@@ -26,14 +26,9 @@ public class Cli {
             System.out.println("Correct!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was " + correctAnswer);
-            System.out.println("Let's try again, " + this.getUserName());
+            System.out.println("Let's try again, " + this.getUserName() + "!");
             throw new RuntimeException();
         }
-    }
-
-    public void failMessage(String answer, String correctAnswer) {
-        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was " + correctAnswer);
-        System.out.println("Let's try again, " + this.getUserName() + "!");
     }
 
     public void successMessage() {
