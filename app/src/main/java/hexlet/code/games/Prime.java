@@ -14,9 +14,9 @@ public class Prime implements Gameable {
     @Override
     public void play(Scanner scanner, Cli cli) throws RuntimeException {
         Random rand = new Random();
-        int number = rand.nextInt(10) + 1;
+        int number = rand.nextInt(100) + 1;
         String correctAnswer;
-        if (Prime.isPrime(number, 2)) {
+        if (Prime.isPrime(number)) {
             correctAnswer = "yes";
         } else {
             correctAnswer = "no";
@@ -24,21 +24,17 @@ public class Prime implements Gameable {
         cli.processUserAnswer(String.valueOf(number), correctAnswer);
     }
 
-    private static boolean isPrime(int n, int i) {
-        // Base case: Numbers less than or equal to 1 are not prime
-        if (n <= 1) return false;
+    private static boolean isPrime(int n) {
+        boolean isPrime = n > 1;
 
-        // Base case: 2 is the smallest prime number
-        if (n == 2) return true;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
 
-        // If n is divisible by i, it is not prime
-        if (n % i == 0) return false;
-
-        // Optimization: If divisor squared exceeds n, n must be prime
-        if (i * i > n) return true;
-
-        // Recursive call: Check the next divisor
-        return isPrime(n, i + 1);
+        return isPrime;
     }
 
 }
