@@ -1,3 +1,4 @@
+## GCD
 Welcome to the Brain Games!
 May I have your name?
 Brian
@@ -17,7 +18,6 @@ Your answer:
 Correct!
 Congratulations,  Brian
 
-
 Welcome to the Brain Games!
 May I have your name?
 Sam
@@ -29,8 +29,7 @@ Your answer:
 '5' is wrong answer ;(. Correct answer was 3
 Let's try again, Sam
 
---------------------------
-
+## Progression
 Welcome to the Brain Games!
 May I have your name?
 John
@@ -50,7 +49,6 @@ Your answer:
 Correct!
 Congratulations,  John
 
-
 Welcome to the Brain Games!
 May I have your name?
 Dan
@@ -65,3 +63,26 @@ Your answer:
 48
 '48' is wrong answer ;(. Correct answer was 50
 Let's try again, Dan
+
+## Prime
+Welcome to the Brain Games!
+May I have your name?
+John
+Hello, John!
+Answer 'yes' if given number is prime. Otherwise answer 'no'.
+Question: 1
+Your answer:
+yes
+'yes' is wrong answer ;(. Correct answer was no
+Let's try again, John
+
+Welcome to the Brain Games!
+May I have your name?
+Wick
+Hello, Wick!
+Answer 'yes' if given number is prime. Otherwise answer 'no'.
+Question: 10
+Your answer:
+no
+Correct!
+Congratulations,  Wick
