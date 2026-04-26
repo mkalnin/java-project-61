@@ -30,8 +30,7 @@ public class App {
         } else if (game.equals("5")) {
             BasicGame.game(cli, scanner, new Progression());
         } else if (game.equals("6")) {
-            cli.greeting(scanner);
-            Prime.game(cli, scanner);
+            BasicGame.singleGame(cli, scanner, new Prime());
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {

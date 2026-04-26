@@ -17,4 +17,15 @@ public class BasicGame {
         }
         cli.successMessage();
     }
+
+    public static void singleGame(Cli cli, Scanner scanner, Gameable game) {
+        cli.greeting(scanner);
+        System.out.println(game.getGameTitle());
+        try {
+            game.play(scanner, cli);
+        } catch (RuntimeException exception) {
+            return;
+        }
+        cli.successMessage();
+    }
 }
