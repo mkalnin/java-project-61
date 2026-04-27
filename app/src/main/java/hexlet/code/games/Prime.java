@@ -1,7 +1,9 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.GameEngine;
 
+import java.nio.channels.Pipe;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,7 +14,7 @@ public class Prime implements Gameable {
     }
 
     @Override
-    public void play(Scanner scanner, Cli cli) throws RuntimeException {
+    public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         Random rand = new Random();
         int number = rand.nextInt(100) + 1;
         String correctAnswer;
@@ -21,7 +23,7 @@ public class Prime implements Gameable {
         } else {
             correctAnswer = "no";
         }
-        cli.processUserAnswer(String.valueOf(number), correctAnswer);
+        gameEngine.processUserAnswer(scanner, String.valueOf(number), correctAnswer);
     }
 
     private static boolean isPrime(int n) {
