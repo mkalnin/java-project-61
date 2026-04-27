@@ -18,19 +18,19 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit \n");
         String game = scanner.next();
-        Cli cli = new Cli();
+        GameEngine gameEngine = new GameEngine();
         if (game.equals("1")) {
-            cli.greeting(scanner);
+            Cli.greet();
         } else if (game.equals("2")) {
-            BasicGame.game(cli, scanner, new CheckEvenGame());
+            gameEngine.game(scanner, new CheckEvenGame());
         } else if (game.equals("3")) {
-            BasicGame.game(cli, scanner, new CalculatorGame());
+            gameEngine.game(scanner, new CalculatorGame());
         } else if (game.equals("4")) {
-            BasicGame.game(cli, scanner, new GCD());
+            gameEngine.game(scanner, new GCD());
         } else if (game.equals("5")) {
-            BasicGame.game(cli, scanner, new Progression());
+            gameEngine.game(scanner, new Progression());
         } else if (game.equals("6")) {
-            BasicGame.singleGame(cli, scanner, new Prime());
+            gameEngine.singleGame(scanner, new Prime());
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {

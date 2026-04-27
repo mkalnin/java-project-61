@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.GameEngine;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Progression implements Gameable{
     }
 
     @Override
-    public void play(Scanner scanner, Cli cli) throws RuntimeException {
+    public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         Random rand = new Random();
         int start = rand.nextInt(10) + 1;
         int index = rand.nextInt(10) + 1;
@@ -28,6 +29,6 @@ public class Progression implements Gameable{
                 subsequence += currentElement + " ";
             }
         }
-        cli.processUserAnswer(subsequence, correctAnswer);
+        gameEngine.processUserAnswer(scanner, subsequence, correctAnswer);
     }
 }

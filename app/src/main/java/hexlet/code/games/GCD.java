@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
+import hexlet.code.GameEngine;
 
 import java.util.Scanner;
 
@@ -11,13 +12,13 @@ public class GCD implements Gameable{
     }
 
     @Override
-    public void play(Scanner scanner, Cli cli) throws RuntimeException {
+    public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         int number1 = (int) (Math.random() * 100) + 1;
         int number2 = (int) (Math.random() * 100) + 1;
         int gcd = this.getGCD(number1, number2);
         String question = String.valueOf(number1) + ' ' + number2;
         String correctAnswer = String.valueOf(this.getGCD(number1, number2));
-        cli.processUserAnswer(question, correctAnswer);
+        gameEngine.processUserAnswer(scanner, question, correctAnswer);
     }
 
     private int getGCD(int a, int b) {
