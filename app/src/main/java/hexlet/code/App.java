@@ -30,7 +30,7 @@ public class App {
         } else if (game.equals("5")) {
             gameEngine.game(scanner, new Progression());
         } else if (game.equals("6")) {
-            gameEngine.singleGame(scanner, new Prime());
+            gameEngine.game(scanner, new Prime());
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {
