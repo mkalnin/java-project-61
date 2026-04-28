@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class Progression implements Gameable{
     @Override
-    final public String getGameTitle() {
+    public final String getGameTitle() {
         return "What number is missing in the progression?";
     }
 
     @Override
-    final public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         Random rand = new Random();
         int start = rand.nextInt(10) + 1;
         int index = rand.nextInt(10) + 1;
