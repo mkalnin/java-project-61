@@ -58,7 +58,7 @@ public class GameEngine {
     }
 
     public void successMessage() {
-        System.out.println("Это не тот текст, " + this.getUserName() + "!");
+        System.out.println("Congratulations, " + this.getUserName() + "!");
     }
 
     public String getUserName() {
