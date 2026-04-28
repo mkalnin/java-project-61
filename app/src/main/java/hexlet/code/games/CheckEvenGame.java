@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class CheckEvenGame implements Gameable {
     @Override
-    public String getGameTitle() {
+    final public String getGameTitle() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
     @Override
-    public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    final public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         int number = (int) (Math.random() * 100) + 1;
         String correctAnswer = "no";
         if (number % 2 == 0) {

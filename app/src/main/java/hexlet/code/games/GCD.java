@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class GCD implements Gameable{
     @Override
-    public String getGameTitle() {
+    final public String getGameTitle() {
         return "Find the greatest common divisor of given numbers.";
     }
 
     @Override
-    public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    final public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         int number1 = (int) (Math.random() * 100) + 1;
         int number2 = (int) (Math.random() * 100) + 1;
         int gcd = this.getGCD(number1, number2);

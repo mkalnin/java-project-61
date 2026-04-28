@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class CalculatorGame implements Gameable {
     @Override
-    public String getGameTitle() {
+    final public String getGameTitle() {
         return "What is the result of the expression?";
     }
 
     @Override
-    public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    final public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         int number1 = (int) (Math.random() * 100) + 1;
         int number2 = (int) (Math.random() * 100) + 1;
         String[] signs = {"+", "-", "*"};
@@ -23,12 +23,12 @@ public class CalculatorGame implements Gameable {
         gameEngine.processUserAnswer(scanner, equation, correctAnswer);
     }
 
-    private int correctAnswer(int number1, int number2, String sign) {
-        switch (sign) {
-            case "+": return number1 + number2;
-            case "-": return number1 - number2;
-            case "*": return number1 * number2;
-            default: throw new RuntimeException();
-        }
+    final int correctAnswer(int number1, int number2, String sign) {
+        return switch (sign) {
+            case "+" -> number1 + number2;
+            case "-" -> number1 - number2;
+            case "*" -> number1 * number2;
+            default -> throw new RuntimeException();
+        };
     }
 }

@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class Prime implements Gameable {
     @Override
-    public String getGameTitle() {
+    final public String getGameTitle() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
     @Override
-    public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    final public void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         Random rand = new Random();
         int number = rand.nextInt(100) + 1;
         String correctAnswer;
