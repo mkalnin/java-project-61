@@ -1,9 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.GameEngine;
 
-import java.nio.channels.Pipe;
 import java.util.Random;
 import java.util.Scanner;
 

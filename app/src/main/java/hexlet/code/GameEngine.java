@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class GameEngine {
     private String userName;
-    private Scanner scanner;
 
     public void game(Scanner scanner, Gameable game) {
         this.greeting(scanner);
@@ -21,19 +20,7 @@ public class GameEngine {
         this.successMessage();
     }
 
-    public void singleGame(Scanner scanner, Gameable game) {
-        this.greeting(scanner);
-        System.out.println(game.getGameTitle());
-        try {
-            game.play(scanner, this);
-        } catch (RuntimeException exception) {
-            return;
-        }
-        this.successMessage();
-    }
-
     public void greeting(Scanner scanner) {
-        this.scanner = scanner;
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name? ");
         this.setUserName(scanner.next());
