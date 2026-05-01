@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression implements Gameable {
+    private int progressionLength = 10;
     @Override
     public final String getGameTitle() {
         return "What number is missing in the progression?";
@@ -16,10 +17,10 @@ public class Progression implements Gameable {
         Random rand = new Random();
         int start = GameEngine.generateShortNumber();
         int index = GameEngine.generateShortNumber();
-        int missingStep = rand.nextInt(10) + 1;
+        int missingStep = rand.nextInt(this.getProgressionLength()) + 1;
         String subsequence = "";
         String correctAnswer = "This was not supposed to happen";
-        for (int step = 1; step <= 10; step++) {
+        for (int step = 1; step <= this.getProgressionLength(); step++) {
             int currentElement = start + index * step;
             if (step == missingStep) {
                 correctAnswer = String.valueOf(currentElement);
@@ -29,5 +30,9 @@ public class Progression implements Gameable {
             }
         }
         gameEngine.processUserAnswer(scanner, subsequence, correctAnswer);
+    }
+
+    public int getProgressionLength() {
+        return progressionLength;
     }
 }
