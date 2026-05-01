@@ -5,7 +5,7 @@ import hexlet.code.GameEngine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Progression implements Gameable{
+public class Progression implements Gameable {
     @Override
     public final String getGameTitle() {
         return "What number is missing in the progression?";

@@ -4,7 +4,7 @@ import hexlet.code.GameEngine;
 
 import java.util.Scanner;
 
-public class GCD implements Gameable{
+public class GCD implements Gameable {
     @Override
     public final String getGameTitle() {
         return "Find the greatest common divisor of given numbers.";
