@@ -8,11 +8,12 @@ public final class GameEngine {
     private String userName;
     public static final int BIG_NUMBER_HIGHEST_RANGE = 100;
     public static final int SHORT_NUMBER_HIGHEST_RANGE = 10;
+    public static final short GAMES_LOOP_COUNT = 10;
 
     public void game(Scanner scanner, Gameable game) {
         this.greeting(scanner);
         System.out.println(game.getGameTitle());
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < GAMES_LOOP_COUNT; i++) {
             try {
                 game.play(scanner, this);
             } catch (RuntimeException exception) {
@@ -50,11 +51,11 @@ public final class GameEngine {
         System.out.println("Congratulations, " + this.getUserName() + "!");
     }
 
-    public String getUserName() {
-        return userName;
+    private String getUserName() {
+        return this.userName;
     }
 
-    public void setUserName(String userName) {
+    private void setUserName(String userName) {
         this.userName = userName;
     }
 

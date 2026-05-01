@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Progression implements Gameable {
-    private static final int progressionLength = 10;
+    private static final int PROGRESSION_LENGTH = 10;
     @Override
     public final String getGameTitle() {
         return "What number is missing in the progression?";
@@ -32,7 +32,7 @@ public class Progression implements Gameable {
         gameEngine.processUserAnswer(scanner, subsequence, correctAnswer);
     }
 
-    public int getProgressionLength() {
-        return progressionLength;
+    public final int getProgressionLength() {
+        return PROGRESSION_LENGTH;
     }
 }
