@@ -8,7 +8,7 @@ public final class GameEngine {
     private String userName;
     public static final int BIG_NUMBER_HIGHEST_RANGE = 100;
     public static final int SHORT_NUMBER_HIGHEST_RANGE = 10;
-    public static final short GAMES_LOOP_COUNT = 10;
+    public static final short GAMES_LOOP_COUNT = 3;
 
     public void game(Scanner scanner, Gameable game) {
         this.greeting(scanner);
