@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.GameEngine;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Prime implements Gameable {
