@@ -13,8 +13,8 @@ public class CalculatorGame implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        int number1 = (int) (Math.random() * 100) + 1;
-        int number2 = (int) (Math.random() * 100) + 1;
+        int number1 = GameEngine.generateBigNumber();
+        int number2 = GameEngine.generateBigNumber();
         String[] signs = {"+", "-", "*"};
         int indexOfSign = new Random().nextInt(signs.length);
         String equation =  String.valueOf(number1) + ' ' + signs[indexOfSign] + ' ' + String.valueOf(number2);

@@ -12,8 +12,8 @@ public class GCD implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        int number1 = (int) (Math.random() * 100) + 1;
-        int number2 = (int) (Math.random() * 100) + 1;
+        int number1 = GameEngine.generateShortNumber();
+        int number2 = GameEngine.generateShortNumber();
         int gcd = this.getGCD(number1, number2);
         String question = String.valueOf(number1) + ' ' + number2;
         String correctAnswer = String.valueOf(this.getGCD(number1, number2));

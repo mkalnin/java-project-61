@@ -14,8 +14,8 @@ public class Progression implements Gameable {
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         Random rand = new Random();
-        int start = rand.nextInt(10) + 1;
-        int index = rand.nextInt(10) + 1;
+        int start = GameEngine.generateShortNumber();
+        int index = GameEngine.generateShortNumber();
         int missingStep = rand.nextInt(10) + 1;
         String subsequence = "";
         String correctAnswer = "This was not supposed to happen";

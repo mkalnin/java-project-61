@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class GameEngine {
     private String userName;
+    public static final int BIG_NUMBER_HIGHEST_RANGE = 100;
+    public static final int SHORT_NUMBER_HIGHEST_RANGE = 10;
 
     public void game(Scanner scanner, Gameable game) {
         this.greeting(scanner);
@@ -54,5 +56,15 @@ public class GameEngine {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public static int generateBigNumber()
+    {
+        return (int) (Math.random() * GameEngine.BIG_NUMBER_HIGHEST_RANGE) + 1;
+    }
+
+    public static int generateShortNumber()
+    {
+        return (int) (Math.random() * GameEngine.SHORT_NUMBER_HIGHEST_RANGE) + 1;
     }
 }

@@ -12,7 +12,7 @@ public class CheckEvenGame implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        int number = (int) (Math.random() * 100) + 1;
+        int number = GameEngine.generateBigNumber();
         String correctAnswer = "no";
         if (number % 2 == 0) {
             correctAnswer = "yes";

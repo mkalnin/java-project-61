@@ -13,8 +13,7 @@ public class Prime implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        Random rand = new Random();
-        int number = rand.nextInt(100) + 1;
+        int number = GameEngine.generateBigNumber();
         String correctAnswer;
         if (Prime.isPrime(number)) {
             correctAnswer = "yes";
