@@ -4,7 +4,7 @@ import hexlet.code.games.Gameable;
 
 import java.util.Scanner;
 
-public class GameEngine {
+public final class GameEngine {
     private String userName;
     public static final int BIG_NUMBER_HIGHEST_RANGE = 100;
     public static final int SHORT_NUMBER_HIGHEST_RANGE = 10;
