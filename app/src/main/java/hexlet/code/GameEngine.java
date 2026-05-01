@@ -55,8 +55,8 @@ public final class GameEngine {
         return this.userName;
     }
 
-    private void setUserName(String userName) {
-        this.userName = userName;
+    private void setUserName(String name) {
+        this.userName = name;
     }
 
     public static int generateBigNumber() {
