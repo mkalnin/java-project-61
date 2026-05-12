@@ -14,8 +14,8 @@ public class CalculatorGame implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        int number1 = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
-        int number2 = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
+        int number1 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
+        int number2 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         String[] signs = {"+", "-", "*"};
         int indexOfSign = new Random().nextInt(signs.length);
         String equation =  String.valueOf(number1) + ' ' + signs[indexOfSign] + ' ' + String.valueOf(number2);

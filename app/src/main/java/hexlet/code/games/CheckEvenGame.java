@@ -13,7 +13,7 @@ public class CheckEvenGame implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        int number = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
+        int number = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         String correctAnswer = (number % 2 == 0) ? "yes" : "no";
         gameEngine.processUserAnswer(scanner, String.valueOf(number), correctAnswer);
     }
