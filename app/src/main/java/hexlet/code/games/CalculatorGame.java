@@ -29,7 +29,7 @@ public class CalculatorGame implements Gameable {
             case "+" -> number1 + number2;
             case "-" -> number1 - number2;
             case "*" -> number1 * number2;
-            default -> throw new RuntimeException();
+            default -> throw new RuntimeException("\"" + sign + "\" is unexpected operation type");
         };
     }
 }
