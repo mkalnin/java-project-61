@@ -59,11 +59,7 @@ public final class GameEngine {
         this.userName = name;
     }
 
-    public static int generateBigNumber() {
-        return (int) (Math.random() * GameEngine.BIG_NUMBER_HIGHEST_RANGE) + 1;
-    }
-
-    public static int generateShortNumber() {
-        return (int) (Math.random() * GameEngine.SHORT_NUMBER_HIGHEST_RANGE) + 1;
+    public static int generateNumber(int highestRange) {
+        return (int) (Math.random() * highestRange) + 1;
     }
 }

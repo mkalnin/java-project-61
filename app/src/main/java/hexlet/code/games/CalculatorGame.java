@@ -6,6 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CalculatorGame implements Gameable {
+    public static final int NUMBER_HIGHEST_RANGE = 100;
     @Override
     public final String getGameTitle() {
         return "What is the result of the expression?";
@@ -13,8 +14,8 @@ public class CalculatorGame implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        int number1 = GameEngine.generateBigNumber();
-        int number2 = GameEngine.generateBigNumber();
+        int number1 = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
+        int number2 = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
         String[] signs = {"+", "-", "*"};
         int indexOfSign = new Random().nextInt(signs.length);
         String equation =  String.valueOf(number1) + ' ' + signs[indexOfSign] + ' ' + String.valueOf(number2);

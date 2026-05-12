@@ -5,6 +5,7 @@ import hexlet.code.GameEngine;
 import java.util.Scanner;
 
 public class Prime implements Gameable {
+    public static final int NUMBER_HIGHEST_RANGE = 100;
     @Override
     public final String getGameTitle() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -12,7 +13,7 @@ public class Prime implements Gameable {
 
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
-        int number = GameEngine.generateBigNumber();
+        int number = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
         String correctAnswer;
         if (Prime.isPrime(number)) {
             correctAnswer = "yes";

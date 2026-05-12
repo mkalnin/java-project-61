@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Progression implements Gameable {
     private static final int PROGRESSION_LENGTH = 10;
+    public static final int NUMBER_HIGHEST_RANGE = 100;
     @Override
     public final String getGameTitle() {
         return "What number is missing in the progression?";
@@ -15,8 +16,8 @@ public class Progression implements Gameable {
     @Override
     public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         Random rand = new Random();
-        int start = GameEngine.generateShortNumber();
-        int index = GameEngine.generateShortNumber();
+        int start = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
+        int index = GameEngine.generateNumber(NUMBER_HIGHEST_RANGE);
         int missingStep = rand.nextInt(this.getProgressionLength()) + 1;
         String subsequence = "";
         String correctAnswer = "This was not supposed to happen";
