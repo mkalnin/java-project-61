@@ -38,7 +38,7 @@ public class App {
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {
-            System.out.println("Unexpected choice");
+            System.out.println("Unexpected choice: " + game + " is not in list");
         }
         scanner.close();
     }
