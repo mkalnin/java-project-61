@@ -26,15 +26,15 @@ public class App {
         if (game.equals("1")) {
             Cli.greet();
         } else if (game.equals("2")) {
-            gameEngine.game(scanner, new CheckEvenGame());
+            gameEngine.game(new CheckEvenGame());
         } else if (game.equals("3")) {
-            gameEngine.game(scanner, new CalculatorGame());
+            gameEngine.game(new CalculatorGame());
         } else if (game.equals("4")) {
-            gameEngine.game(scanner, new GCD());
+            gameEngine.game(new GCD());
         } else if (game.equals("5")) {
-            gameEngine.game(scanner, new Progression());
+            gameEngine.game(new Progression());
         } else if (game.equals("6")) {
-            gameEngine.game(scanner, new Prime());
+            gameEngine.game(new Prime());
         } else if (game.equals("0")) {
             System.out.println("Bye");
         } else {
