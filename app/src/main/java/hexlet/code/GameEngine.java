@@ -26,8 +26,8 @@ public final class GameEngine {
     public void greeting(Scanner scanner) {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name? ");
-        this.setUserName(scanner.next());
-        System.out.println("Hello, " + this.getUserName() + "!");
+        userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
     }
 
     public void processUserAnswer(Scanner scanner, String question, String correctAnswer) {
@@ -42,13 +42,13 @@ public final class GameEngine {
             System.out.println("Correct!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was " + correctAnswer);
-            System.out.println("Let's try again, " + this.getUserName() + "!");
+            System.out.println("Let's try again, " + userName + "!");
             throw new RuntimeException();
         }
     }
 
     public void successMessage() {
-        System.out.println("Congratulations, " + this.getUserName() + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 
     private String getUserName() {
