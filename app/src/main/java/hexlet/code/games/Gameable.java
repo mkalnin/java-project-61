@@ -6,5 +6,9 @@ import java.util.Scanner;
 
 public interface Gameable {
     String getGameTitle();
-    void play(Scanner scanner, GameEngine game) throws RuntimeException;
+    default void play() {
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.game(this);
+    };
+    void gameProcess(Scanner scanner, GameEngine game) throws RuntimeException;
 }

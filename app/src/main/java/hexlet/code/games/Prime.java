@@ -12,7 +12,7 @@ public class Prime implements Gameable {
     }
 
     @Override
-    public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    public final void gameProcess(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         int number = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         String correctAnswer;
         if (Prime.isPrime(number)) {

@@ -21,24 +21,33 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit \n");
-        String game = scanner.next();
+        Integer game = scanner.nextInt();
         GameEngine gameEngine = new GameEngine();
-        if (game.equals("1")) {
-            Cli.greet();
-        } else if (game.equals("2")) {
-            gameEngine.game(new CheckEvenGame());
-        } else if (game.equals("3")) {
-            gameEngine.game(new CalculatorGame());
-        } else if (game.equals("4")) {
-            gameEngine.game(new GCD());
-        } else if (game.equals("5")) {
-            gameEngine.game(new Progression());
-        } else if (game.equals("6")) {
-            gameEngine.game(new Prime());
-        } else if (game.equals("0")) {
-            System.out.println("Bye");
-        } else {
-            System.out.println("Unexpected choice: " + game + " is not in list");
+        switch (game) {
+            case 1:
+                Cli.greet();
+                break;
+            case 2:
+                new CheckEvenGame().play();
+                break;
+            case 3:
+                new CalculatorGame().play();
+                break;
+            case 4:
+                new GCD().play();
+                break;
+            case 5:
+                new Progression().play();
+                break;
+            case 6:
+                new Prime().play();
+                break;
+            case 0:
+                System.out.println("Bye");
+                break;
+            default:
+                System.out.println("Unexpected choice: " + game + " is not in list");
+                break;
         }
         scanner.close();
     }

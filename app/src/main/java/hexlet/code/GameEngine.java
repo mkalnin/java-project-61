@@ -17,7 +17,7 @@ public final class GameEngine {
         System.out.println(game.getGameTitle());
         for (int i = 0; i < GAMES_LOOP_COUNT; i++) {
             try {
-                game.play(scanner, this);
+                game.gameProcess(scanner, this);
             } catch (RuntimeException exception) {
                 return;
             }

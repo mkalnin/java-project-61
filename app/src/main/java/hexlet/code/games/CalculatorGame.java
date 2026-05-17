@@ -13,7 +13,7 @@ public class CalculatorGame implements Gameable {
     }
 
     @Override
-    public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    public final void gameProcess(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         int number1 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int number2 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         String[] signs = {"+", "-", "*"};

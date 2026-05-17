@@ -14,7 +14,7 @@ public class Progression implements Gameable {
     }
 
     @Override
-    public final void play(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    public final void gameProcess(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
         Random rand = new Random();
         int start = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int index = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
