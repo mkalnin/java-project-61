@@ -21,28 +21,28 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit \n");
-        Integer game = scanner.nextInt();
+        String game = scanner.next();
         GameEngine gameEngine = new GameEngine();
         switch (game) {
-            case 1:
+            case "1":
                 Cli.greet();
                 break;
-            case 2:
+            case "2":
                 new CheckEvenGame().play();
                 break;
-            case 3:
+            case "3":
                 new CalculatorGame().play();
                 break;
-            case 4:
+            case "4":
                 new GCD().play();
                 break;
-            case 5:
+            case "5":
                 new Progression().play();
                 break;
-            case 6:
+            case "6":
                 new Prime().play();
                 break;
-            case 0:
+            case "0":
                 System.out.println("Bye");
                 break;
             default:
