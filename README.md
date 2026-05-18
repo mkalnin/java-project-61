@@ -1,3 +1,4 @@
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=mkalnin_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=mkalnin_java-project-61)
 # Brain games application
 ## Run App.java to play brain games
 #### You will see the menu with the game list  
