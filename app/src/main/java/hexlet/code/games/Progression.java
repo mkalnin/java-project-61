@@ -5,7 +5,7 @@ import java.util.Random;
 public class Progression implements Gameable {
     private static final int PROGRESSION_LENGTH = 10;
     public static final int NUMBER_HIGHEST_RANGE = 100;
-    public String correctAnswer;
+    private String correctAnswer;
     @Override
     public final String getGameTitle() {
         return "What number is missing in the progression?";
@@ -34,6 +34,14 @@ public class Progression implements Gameable {
             }
         }
         return progression;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void setCorrectAnswer(String answer) {
+        this.correctAnswer = answer;
     }
 
     public final int getProgressionLength() {
