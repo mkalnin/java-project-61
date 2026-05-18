@@ -17,7 +17,7 @@ public class Progression implements Gameable {
         GAME_ENGINE.processUserAnswer(progression, correctAnswer);
     }
 
-    private String generateProgression() {
+    private final String generateProgression() {
         Random rand = new Random();
         int start = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int index = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
@@ -36,11 +36,11 @@ public class Progression implements Gameable {
         return progression;
     }
 
-    public String getCorrectAnswer() {
+    public final String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(String answer) {
+    public final void setCorrectAnswer(String answer) {
         this.correctAnswer = answer;
     }
 
