@@ -1,9 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public class CalculatorGame implements Gameable {
     public static final int NUMBER_HIGHEST_RANGE = 100;
@@ -13,7 +10,7 @@ public class CalculatorGame implements Gameable {
     }
 
     @Override
-    public final void gameProcess(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    public final void gameProcess() throws RuntimeException {
         int number1 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int number2 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         String[] signs = {"+", "-", "*"};
@@ -21,7 +18,7 @@ public class CalculatorGame implements Gameable {
         String equation =  String.valueOf(number1) + ' ' + signs[indexOfSign] + ' ' + String.valueOf(number2);
         System.out.println(equation);
         String  correctAnswer = String.valueOf(this.correctAnswer(number1, number2, signs[indexOfSign]));
-        gameEngine.processUserAnswer(scanner, equation, correctAnswer);
+        GAME_ENGINE.processUserAnswer(equation, correctAnswer);
     }
 
     final int correctAnswer(int number1, int number2, String sign) {

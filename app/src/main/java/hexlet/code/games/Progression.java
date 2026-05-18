@@ -1,36 +1,39 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression implements Gameable {
     private static final int PROGRESSION_LENGTH = 10;
     public static final int NUMBER_HIGHEST_RANGE = 100;
+    public String correctAnswer;
     @Override
     public final String getGameTitle() {
         return "What number is missing in the progression?";
     }
 
     @Override
-    public final void gameProcess(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    public final void gameProcess() throws RuntimeException {
+        String progression = generateProgression();
+        GAME_ENGINE.processUserAnswer(progression, correctAnswer);
+    }
+
+    private String generateProgression() {
         Random rand = new Random();
         int start = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int index = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int missingStep = rand.nextInt(this.getProgressionLength()) + 1;
-        String subsequence = "";
-        String correctAnswer = "This was not supposed to happen";
+        correctAnswer = "This was not supposed to happen";
+        String progression = "";
         for (int step = 1; step <= this.getProgressionLength(); step++) {
             int currentElement = start + index * step;
             if (step == missingStep) {
                 correctAnswer = String.valueOf(currentElement);
-                subsequence += ".. ";
+                progression += ".. ";
             } else {
-                subsequence += currentElement + " ";
+                progression += currentElement + " ";
             }
         }
-        gameEngine.processUserAnswer(scanner, subsequence, correctAnswer);
+        return progression;
     }
 
     public final int getProgressionLength() {

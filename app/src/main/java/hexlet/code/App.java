@@ -22,7 +22,6 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit \n");
         String game = scanner.next();
-        GameEngine gameEngine = new GameEngine();
         switch (game) {
             case "1":
                 Cli.greet();

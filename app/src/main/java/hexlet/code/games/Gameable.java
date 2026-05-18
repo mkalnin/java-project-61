@@ -2,13 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.GameEngine;
 
-import java.util.Scanner;
-
 public interface Gameable {
+    GameEngine GAME_ENGINE = new GameEngine();
     String getGameTitle();
     default void play() {
-        GameEngine gameEngine = new GameEngine();
-        gameEngine.game(this);
+        GAME_ENGINE.game(this);
     };
-    void gameProcess(Scanner scanner, GameEngine game) throws RuntimeException;
+    void gameProcess() throws RuntimeException;
 }

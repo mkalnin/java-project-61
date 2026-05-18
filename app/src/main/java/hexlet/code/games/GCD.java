@@ -1,9 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.GameEngine;
-
-import java.util.Scanner;
-
 public class GCD implements Gameable {
     @Override
     public final String getGameTitle() {
@@ -11,13 +7,13 @@ public class GCD implements Gameable {
     }
     public static final int NUMBER_HIGHEST_RANGE = 10;
     @Override
-    public final void gameProcess(Scanner scanner, GameEngine gameEngine) throws RuntimeException {
+    public final void gameProcess() throws RuntimeException {
         int number1 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int number2 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int gcd = this.getGCD(number1, number2);
         String question = String.valueOf(number1) + ' ' + number2;
         String correctAnswer = String.valueOf(this.getGCD(number1, number2));
-        gameEngine.processUserAnswer(scanner, question, correctAnswer);
+        GAME_ENGINE.processUserAnswer(question, correctAnswer);
     }
 
     private int getGCD(int a, int b) {

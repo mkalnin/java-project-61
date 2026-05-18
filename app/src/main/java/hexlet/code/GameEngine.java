@@ -6,10 +6,11 @@ import java.util.Scanner;
 
 public final class GameEngine {
     private String userName;
+    private Scanner scanner;
     public static final short GAMES_LOOP_COUNT = 3;
 
     public void game(Gameable game) {
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name? ");
         userName = scanner.next();
@@ -17,7 +18,7 @@ public final class GameEngine {
         System.out.println(game.getGameTitle());
         for (int i = 0; i < GAMES_LOOP_COUNT; i++) {
             try {
-                game.gameProcess(scanner, this);
+                game.gameProcess();
             } catch (RuntimeException exception) {
                 return;
             }
@@ -25,7 +26,7 @@ public final class GameEngine {
         System.out.println("Congratulations, " + userName + "!");
     }
 
-    public void processUserAnswer(Scanner scanner, String question, String correctAnswer) {
+    public void processUserAnswer(String question, String correctAnswer) {
         System.out.println("Question: " + question);
         System.out.println("Your answer: ");
         String answer = scanner.next();
