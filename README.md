@@ -1,4 +1,5 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=mkalnin_java-project-61&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=mkalnin_java-project-61)
+[![Actions Status](https://github.com/mkalnin/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mkalnin/java-project-61/actions)
 # Brain games application
 ## Run App.java to play brain games
 #### You will see the menu with the game list  
