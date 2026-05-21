@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Random;
-
 public class Progression implements Gameable {
     private static final int PROGRESSION_LENGTH = 10;
     public static final int NUMBER_HIGHEST_RANGE = 100;
@@ -13,18 +11,17 @@ public class Progression implements Gameable {
 
     @Override
     public final void gameProcess() throws RuntimeException {
-        String progression = generateProgression();
+        int start = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
+        int index = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
+        int missingStep = (int) (Math.random() * PROGRESSION_LENGTH) + 1;
+        String progression = generateProgression(start, index, missingStep, PROGRESSION_LENGTH);
         GAME_ENGINE.processUserAnswer(progression, correctAnswer);
     }
 
-    private String generateProgression() {
-        Random rand = new Random();
-        int start = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
-        int index = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
-        int missingStep = rand.nextInt(this.getProgressionLength()) + 1;
+    private String generateProgression(int start, int index, int missingStep, int progessionLength) {
         correctAnswer = "This was not supposed to happen";
         String progression = "";
-        for (int step = 1; step <= this.getProgressionLength(); step++) {
+        for (int step = 1; step <= progessionLength; step++) {
             int currentElement = start + index * step;
             if (step == missingStep) {
                 correctAnswer = String.valueOf(currentElement);
@@ -34,17 +31,5 @@ public class Progression implements Gameable {
             }
         }
         return progression;
-    }
-
-    public final String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public final void setCorrectAnswer(String answer) {
-        this.correctAnswer = answer;
-    }
-
-    public final int getProgressionLength() {
-        return PROGRESSION_LENGTH;
     }
 }
