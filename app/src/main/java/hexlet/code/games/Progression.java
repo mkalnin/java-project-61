@@ -22,21 +22,15 @@ public class Progression implements Gameable {
         int[] progression = generateProgression(start, difference, PROGRESSION_LENGTH);
 
         String correctAnswer = String.valueOf(progression[hiddenIndex]);
-        StringBuilder progressionString = new StringBuilder();
 
-        for (int step = 0; step < PROGRESSION_LENGTH; step++) {
-            if (step == hiddenIndex) {
-                progressionString.append("..");
-            } else {
-                progressionString.append(progression[step]);
-            }
-
-            if (step < PROGRESSION_LENGTH - 1) {
-                progressionString.append(" ");
-            }
+        String[] questionParts = new String[PROGRESSION_LENGTH];
+        for (int i = 0; i < PROGRESSION_LENGTH; i++) {
+            questionParts[i] = i == hiddenIndex ? ".." : Integer.toString(progression[i]);
         }
 
-        GAME_ENGINE.processUserAnswer(progressionString.toString(), correctAnswer);
+        String question = String.join(" ", questionParts);
+
+        GAME_ENGINE.processUserAnswer(question, correctAnswer);
     }
 
     private int[] generateProgression(int start, int difference, int progressionLength) {
