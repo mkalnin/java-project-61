@@ -16,26 +16,33 @@ public class Progression implements Gameable {
     @Override
     public final void gameProcess() throws RuntimeException {
         int start = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
-        int index = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
-        int missingStep = (int) (Math.random() * PROGRESSION_LENGTH) + 1;
-        int[] progression = generateProgression(start, index, PROGRESSION_LENGTH);
-        String correctAnswer = "This was not supposed to happen";
-        String progressionString = "";
+        int difference = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
+        int hiddenIndex = (int) (Math.random() * PROGRESSION_LENGTH);
+
+        int[] progression = generateProgression(start, difference, PROGRESSION_LENGTH);
+
+        String correctAnswer = String.valueOf(progression[hiddenIndex]);
+        StringBuilder progressionString = new StringBuilder();
+
         for (int step = 0; step < PROGRESSION_LENGTH; step++) {
-            if (step == missingStep) {
-                correctAnswer = String.valueOf(progression[step]);
-                progressionString += ".. ";
+            if (step == hiddenIndex) {
+                progressionString.append("..");
             } else {
-                progressionString += progression[step] + " ";
+                progressionString.append(progression[step]);
+            }
+
+            if (step < PROGRESSION_LENGTH - 1) {
+                progressionString.append(" ");
             }
         }
-        GAME_ENGINE.processUserAnswer(progressionString, correctAnswer);
+
+        GAME_ENGINE.processUserAnswer(progressionString.toString(), correctAnswer);
     }
 
-    private int[] generateProgression(int start, int index, int progessionLength) {
-        int[] progression = new int[progessionLength];
-        for (int step = 1; step <= progessionLength; step++) {
-            progression[step - 1] = start + index * step;
+    private int[] generateProgression(int start, int difference, int progressionLength) {
+        int[] progression = new int[progressionLength];
+        for (int step = 0; step < progressionLength; step++) {
+            progression[step] = start + difference * step;
         }
         return progression;
     }
