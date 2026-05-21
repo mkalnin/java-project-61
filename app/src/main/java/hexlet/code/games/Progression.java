@@ -23,6 +23,7 @@ public class Progression implements Gameable {
         String progressionString = "";
         for (int step = 0; step < PROGRESSION_LENGTH; step++) {
             if (step == missingStep) {
+                correctAnswer = String.valueOf(progression[step]);
                 progressionString += ".. ";
             } else {
                 progressionString += progression[step] + " ";
