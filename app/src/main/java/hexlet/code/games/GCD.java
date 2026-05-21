@@ -16,16 +16,16 @@ public class GCD implements Gameable {
     public final void gameProcess() throws RuntimeException {
         int number1 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int number2 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
-        int gcd = this.getGCD(number1, number2);
+        int gcd = this.gcd(number1, number2);
         String question = String.valueOf(number1) + ' ' + number2;
-        String correctAnswer = String.valueOf(this.getGCD(number1, number2));
+        String correctAnswer = String.valueOf(this.gcd(number1, number2));
         GAME_ENGINE.processUserAnswer(question, correctAnswer);
     }
 
-    private int getGCD(int a, int b) {
+    private int gcd(int a, int b) {
         if (b == 0) {
             return a;
         }
-        return getGCD(b, a % b);
+        return gcd(b, a % b);
     }
 }
