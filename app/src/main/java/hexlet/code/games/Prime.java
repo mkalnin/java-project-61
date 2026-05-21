@@ -8,14 +8,14 @@ public class Prime implements Gameable {
     }
 
     @Override
+    public void play() {
+        GAME_ENGINE.game(this);
+    }
+
+    @Override
     public final void gameProcess() throws RuntimeException {
         int number = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
-        String correctAnswer;
-        if (Prime.isPrime(number)) {
-            correctAnswer = "yes";
-        } else {
-            correctAnswer = "no";
-        }
+        String correctAnswer = Prime.isPrime(number) ? "yes" : "no";
         GAME_ENGINE.processUserAnswer(String.valueOf(number), correctAnswer);
     }
 

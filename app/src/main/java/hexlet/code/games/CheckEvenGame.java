@@ -8,6 +8,11 @@ public class CheckEvenGame implements Gameable {
     }
 
     @Override
+    public void play() {
+        GAME_ENGINE.game(this);
+    }
+
+    @Override
     public final void gameProcess() throws RuntimeException {
         int number = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         String correctAnswer = (number % 2 == 0) ? "yes" : "no";

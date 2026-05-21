@@ -6,6 +6,12 @@ public class GCD implements Gameable {
         return "Find the greatest common divisor of given numbers.";
     }
     public static final int NUMBER_HIGHEST_RANGE = 10;
+
+    @Override
+    public void play() {
+        GAME_ENGINE.game(this);
+    }
+
     @Override
     public final void gameProcess() throws RuntimeException {
         int number1 = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;

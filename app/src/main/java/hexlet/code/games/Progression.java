@@ -3,10 +3,14 @@ package hexlet.code.games;
 public class Progression implements Gameable {
     private static final int PROGRESSION_LENGTH = 10;
     public static final int NUMBER_HIGHEST_RANGE = 100;
-    private String correctAnswer;
     @Override
     public final String getGameTitle() {
         return "What number is missing in the progression?";
+    }
+
+    @Override
+    public void play() {
+        GAME_ENGINE.game(this);
     }
 
     @Override
@@ -14,21 +18,23 @@ public class Progression implements Gameable {
         int start = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int index = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int missingStep = (int) (Math.random() * PROGRESSION_LENGTH) + 1;
-        String progression = generateProgression(start, index, missingStep, PROGRESSION_LENGTH);
-        GAME_ENGINE.processUserAnswer(progression, correctAnswer);
+        int[] progression = generateProgression(start, index, PROGRESSION_LENGTH);
+        String correctAnswer = "This was not supposed to happen";
+        String progressionString = "";
+        for (int step = 0; step < PROGRESSION_LENGTH; step++) {
+            if (step == missingStep) {
+                progressionString += ".. ";
+            } else {
+                progressionString += progression[step] + " ";
+            }
+        }
+        GAME_ENGINE.processUserAnswer(progressionString, correctAnswer);
     }
 
-    private String generateProgression(int start, int index, int missingStep, int progessionLength) {
-        correctAnswer = "This was not supposed to happen";
-        String progression = "";
+    private int[] generateProgression(int start, int index, int progessionLength) {
+        int[] progression = new int[progessionLength];
         for (int step = 1; step <= progessionLength; step++) {
-            int currentElement = start + index * step;
-            if (step == missingStep) {
-                correctAnswer = String.valueOf(currentElement);
-                progression += ".. ";
-            } else {
-                progression += currentElement + " ";
-            }
+            progression[step - 1] = start + index * step;
         }
         return progression;
     }
