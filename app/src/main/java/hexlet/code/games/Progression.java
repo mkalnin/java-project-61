@@ -19,25 +19,22 @@ public class Progression implements Gameable {
         int difference = (int) (Math.random() * NUMBER_HIGHEST_RANGE) + 1;
         int hiddenIndex = (int) (Math.random() * PROGRESSION_LENGTH);
 
-        int[] progression = generateProgression(start, difference, PROGRESSION_LENGTH);
-
-        String correctAnswer = String.valueOf(progression[hiddenIndex]);
-
-        String[] questionParts = new String[PROGRESSION_LENGTH];
-        for (int i = 0; i < PROGRESSION_LENGTH; i++) {
-            questionParts[i] = i == hiddenIndex ? ".." : Integer.toString(progression[i]);
-        }
-
-        String question = String.join(" ", questionParts);
+        String[] progressionParts = generateProgression(start, difference, PROGRESSION_LENGTH, hiddenIndex);
+        String question = String.join(" ", progressionParts);
+        String correctAnswer = String.valueOf(start + difference * hiddenIndex);
 
         GAME_ENGINE.processUserAnswer(question, correctAnswer);
     }
 
-    private int[] generateProgression(int start, int difference, int progressionLength) {
-        int[] progression = new int[progressionLength];
-        for (int step = 0; step < progressionLength; step++) {
-            progression[step] = start + difference * step;
+    private String[] generateProgression(int start, int difference, int length, int hiddenIndex) {
+        String[] progressionParts = new String[length];
+        for (int step = 0; step < length; step++) {
+            if (step == hiddenIndex) {
+                progressionParts[step] = "..";
+            } else {
+                progressionParts[step] = String.valueOf(start + difference * step);
+            }
         }
-        return progression;
+        return progressionParts;
     }
 }
